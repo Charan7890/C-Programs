@@ -4,7 +4,7 @@ struct node{
 	int data;
 	struct node *next;
 };
-tydef struct node NODE;
+typedef struct node NODE;
 NODE *head=NULL,*tail=NULL,*temp=NULL;
 NODE* createnode(){
 	NODE *new;
@@ -21,6 +21,7 @@ int main(){
 			scanf("%d",&n);
 			nn->next=NULL;
 			nn->data=n;
+			head=nn;
 			tail=head;
 		}
 		else{
@@ -40,11 +41,12 @@ int main(){
 		}
 	}
 
-	printf("/nThe elements present in linked list are:");
+	printf("\nThe elements present in linked list are:");
 	temp=head;
 	while(temp!=NULL){
 		printf("%d->",temp->data);
 		temp=temp->next;
 	}
+	printf("NULL");
 	return 0;
 }
